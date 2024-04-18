@@ -1,10 +1,10 @@
-import NewsSection from "./components/NewsSection.jsx";
+import ButtonLink from "./components/ButtonLink";
 
 function App() {
   return (
-    <>
-      <NewsSection />
-    </>
+    <div className="">
+      <ButtonLink buttonColor="#D5CEBA" buttonName="All News" />
+    </div>
   );
 }
 
