@@ -1,8 +1,10 @@
+import NewsSection from "./components/NewsSection.jsx";
+
 function App() {
   return (
-    <div className="">
-      hi
-    </div>
+    <>
+      <NewsSection />
+    </>
   );
 }
 
