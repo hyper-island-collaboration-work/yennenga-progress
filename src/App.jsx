@@ -1,7 +1,9 @@
+import ButtonLink from "./components/ButtonLink";
+
 function App() {
   return (
     <div className="">
-      hi
+      <ButtonLink buttonColor="#D5CEBA" buttonName="All News" />
     </div>
   );
 }

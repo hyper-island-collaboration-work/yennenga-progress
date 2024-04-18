@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply max-w-[1440px] mx-auto;
+  }
+  li,
+  button {
+    @apply cursor-pointer;
+  }
+}
