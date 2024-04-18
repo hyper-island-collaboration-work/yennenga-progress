@@ -1,10 +1,11 @@
 import ButtonLink from "./components/ButtonLink";
+import NewsSection from "./components/NewsSection";
 
 function App() {
   return (
-    <div className="">
-      <ButtonLink buttonColor="#D5CEBA" buttonName="All News" />
-    </div>
+    <>
+      <NewsSection />
+    </>
   );
 }
 
