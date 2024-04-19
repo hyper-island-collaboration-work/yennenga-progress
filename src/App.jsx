@@ -1,5 +1,5 @@
-import ButtonLink from "./components/ButtonLink";
 import NewsSection from "./components/NewsSection";
+import NewsPost from "./components/NewsPost";
 
 function App() {
   return (
