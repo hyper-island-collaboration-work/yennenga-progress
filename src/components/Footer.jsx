@@ -3,6 +3,7 @@ import RightArrowOneIcon from "./Icons/RightArrowOneIcon";
 import FaceBookIcon from './Icons/FacebookIcon'
 import InstagramIcon from './Icons/InstagramIcon';
 import LinkedinIcon from './Icons/LinkedinIcon';
+import ButtonLink from "./ButtonLink";
 
 
 export default function Footer() {
@@ -17,12 +18,12 @@ export default function Footer() {
               report
             </p>
             <div className="">
-              <button className="transistion flex w-fit cursor-pointer items-center gap-2 rounded-xl bg-light p-1 pr-2 font-plexSerif text-black hover:scale-[1.02]">
-                <p>For Business Partner</p>
-                <div className="mt-0.5">
-                  <RightArrowOneIcon width="14" height="14" fill="black" />
-                </div>
-              </button>
+            <div className="transistion flex w-fit cursor-pointer items-center gap-2 rounded-xl bg-light p-1 pr-2 font-plexSerif text-black hover:scale-[1.02]">
+            <ButtonLink buttonName={"For Business Partner"} />
+            <div className="mt-0.5">
+              <RightArrowOneIcon width="14" height="14" fill="black" />
+            </div>
+          </div>
             </div>
           </div>
           <div className="flex flex-col flex-wrap items-start justify-between gap-5 px-10 pb-10 pt-16 md:flex-row md:gap-0">
