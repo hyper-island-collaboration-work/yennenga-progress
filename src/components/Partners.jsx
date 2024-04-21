@@ -35,7 +35,7 @@ const Partners = () => {
   }, [imagesList]);
 
   return (
-    <section className=" bg-sand font-montserrat flex flex-col py-[48px] lg:py-[120px]">
+    <section className=" bg-stone-300 font-montserrat flex flex-col py-[48px] lg:py-[120px]">
       <h2 className=" mx-auto mb-[60px] lg:mb-[120px] max-w-[345px] lg:max-w-[520px] text-center text-[24px] lg:text-[40px] font-medium">
         Our partnerships partnershipspartnerships countriescountries
       </h2>
