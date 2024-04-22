@@ -12,6 +12,7 @@ export default {
         umber: '#BA6740',
         burkinaBlue: '#005CD7',
         darkBlue: '#1F4BA2',
+        light: '#F0F0F0'
       },
     },
   },
