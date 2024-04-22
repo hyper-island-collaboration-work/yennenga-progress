@@ -1,11 +1,20 @@
-import Partners from "./components/Partners";
 import Header from "./components/Header";
+import Partners from "./components/Partners";
+import ProjectCarouselSection from "./components/Projects/ProjectCarouselSection";
+import ReadyToTakeAction from "./components/ReadyToTakeAction";
+import Footer from "./components/Footer";
+import ProjectsProvider from "./providers/ProjectsProvider/ProjectsProvider";
 
 function App() {
   return (
     <div className="">
       <Header />
-      <Partners />
+      <ProjectsProvider>
+        <ProjectCarouselSection />
+        <Partners />
+        <ReadyToTakeAction />
+        <Footer />
+      </ProjectsProvider>
     </div>
   );
 }
