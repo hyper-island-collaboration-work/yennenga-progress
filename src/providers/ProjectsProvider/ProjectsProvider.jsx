@@ -4,7 +4,6 @@ import ProjectsProviderContext from "./ProjectsProvider.context";
 
 const ProjectsProvider = ({ children }) => {
   const [projectList, setProjectList] = useState([]);
-  console.log(projectList);
 
   const cleanUpProjectList = useCallback((rawData) => {
     const cleanProjectsData = rawData.map((project) => {
