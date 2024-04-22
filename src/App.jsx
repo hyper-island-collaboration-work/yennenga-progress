@@ -1,4 +1,6 @@
+
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 import Partners from "./components/Partners";
 import ProjectCarouselSection from "./components/Projects/ProjectCarouselSection";
 import ReadyToTakeAction from "./components/ReadyToTakeAction";
@@ -9,6 +11,7 @@ function App() {
   return (
     <div className="">
       <Header />
+      <Hero />
       <ProjectsProvider>
         <ProjectCarouselSection />
         <Partners />
