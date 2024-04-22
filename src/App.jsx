@@ -1,22 +1,22 @@
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Partners from "./components/Partners";
-import ProjectCarouselSection from "./components/Projects/ProjectCarouselSection";
-import ReadyToTakeAction from "./components/ReadyToTakeAction";
-import Footer from "./components/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import RootPage from "./pages/RootPage";
+import HomePage from './pages/HomePage';
 import ProjectsProvider from "./providers/ProjectsProvider/ProjectsProvider";
 
 function App() {
   return (
     <div className="">
-      <Header />
-      <Hero />
-      <ProjectsProvider>
-        <ProjectCarouselSection />
-        <Partners />
-        <ReadyToTakeAction />
-        <Footer />
-      </ProjectsProvider>
+      <BrowserRouter>
+        <ProjectsProvider>
+          <Routes>
+            <Route path="/" element={<RootPage />}>
+              <Route index element={<HomePage />} />
+              {/* <Route path="/search" element={<ProjectPage />} />             
+              <Route path="/myboard" element={<NewsPage />} />             */}
+            </Route>
+          </Routes>
+        </ProjectsProvider>
+      </BrowserRouter>
     </div>
   );
 }
