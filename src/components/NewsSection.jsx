@@ -31,9 +31,9 @@ export default function NewsSection() {
           </div>
         </div>
       </section>
-      {newsPosts.map((post) => (
+      {/* {newsPosts.map((post) => (
         <NewsPost post={post} showFullPost={true} />
-      ))}
+      ))} */}
     </>
   );
 }
