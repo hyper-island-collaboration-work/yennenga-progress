@@ -38,7 +38,7 @@ const Header = () => {
     setopen((prev) => !prev);
   };
   return (
-    <div className={open ? "bg-orange-700" : {}}>
+    <div className={open ? "bg-orange-700" : "bg-stone-300"}>
       <div className="mx-auto px-4 font-bold sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="item-center flex">
