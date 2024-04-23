@@ -30,7 +30,7 @@ const HeroProjectSection = ({ project }) => {
           </li>
         </ul>
         </div>
-        <p className=" text-xl font-light">{project.aboutTheProject}</p>
+        <p className=" text-xl font-light">{project.description}</p>
       </div>
     </section>
   );
