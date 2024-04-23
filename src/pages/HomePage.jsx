@@ -4,12 +4,14 @@ import ProjectCarouselSection from "../components/Projects/ProjectCarouselSectio
 import ReadyToTakeAction from "../components/ReadyToTakeAction";
 import NewsSection from "../components/NewsSection";
 import WWDSections from "../components/WWDSections";
+import WWDVideoSection from "../components/WWDVideoSection";
 
 const HomePage = () => {
   return (
     <>
       <Hero />
       <WWDSections />
+      <WWDVideoSection/>
       <ProjectCarouselSection />
       <Partners />
       <NewsSection />
