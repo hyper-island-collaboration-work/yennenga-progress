@@ -28,7 +28,7 @@ export default function ProjectPage() {
               {project.aboutTheProject}
             </p>
           </div>
-          <ul className=" grid grid-cols-1 gap-[72px]">
+          <ul className=" grid grid-cols-1 gap-[72px] pb-[120px]">
             <li>
               <ActionSection action={project.actions[0]} number="01" />
             </li>

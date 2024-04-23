@@ -8,9 +8,9 @@ const ActionSection = ({ action, number }) => {
   }
 
   return (
-    <section className=" grid grid-cols-2 gap-6 text-white">
-      <img src={action.image} className={`${gridElementOrder} w-[600px]`} />
-      <div className="flex">
+    <section className=" grid grid-cols-[1fr,1fr] gap-10 text-white">
+      <img src={action.image} className={`${gridElementOrder} w-full`} />
+      <div className="flex w-full">
         <p className=" mr-6 font-montserrat text-4xl font-medium">{number}</p>
         <div className=" flex flex-col ">
           <h3 className="font-montserrat text-4xl font-medium mb-6">
