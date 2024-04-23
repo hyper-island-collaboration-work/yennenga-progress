@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const navlinks = [
   {
@@ -34,11 +35,19 @@ const navlinks = [
 const Header = () => {
   const [open, setopen] = useState(false);
 
+  //styling if user is on newspage
+  const location = useLocation();
+  const headerColor =
+    location.pathname === "/newspage" ? "bg-burkinaBlue" : "bg-stone-300";
+  // styling for links on newspage
+  const textColor =
+    headerColor === "bg-burkinaBlue" ? "text-white" : "text-black";
+
   const handleMenu = () => {
     setopen((prev) => !prev);
   };
   return (
-    <div className={open ? "bg-orange-700" : "bg-stone-300"}>
+    <div className={open ? "bg-orange-700" : `${headerColor}`}>
       <div className="mx-auto px-4 font-bold sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="item-center flex">
@@ -55,12 +64,9 @@ const Header = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               {navlinks.map((link, index) => (
                 <a
-                  key={index}
-                  className={
-                    link.title === "INDIVIDUAL"
-                      ? "font-bold text-orange-700 transition-all duration-500 hover:opacity-45"
-                      : "font-bold text-black transition-all duration-500 hover:opacity-45"
-                  }
+                  className={`font-bold transition-all duration-500 hover:opacity-45 ${
+                    link.title === "INDIVIDUAL" ? "text-orange-700" : textColor
+                  }`}
                   href={link.link}
                 >
                   {link.title}
