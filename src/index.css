@@ -11,3 +11,8 @@
     @apply cursor-pointer;
   }
 }
+@layer utilities {
+  .aspect-video {
+    aspect-ratio: 1040 / 480;
+  }
+}
