@@ -1,3 +1,7 @@
+import InstagramIcon from "./Icons/InstagramIcon";
+import FacebookIcon from "./Icons/FacebookIcon";
+import LinkedInIcon from "./Icons/LinkedinIcon";
+
 export default function NewsPost({ post, showFullPost }) {
   if (!post) {
     return <p>nothing here</p>;
@@ -14,9 +18,14 @@ export default function NewsPost({ post, showFullPost }) {
             <h4 className="m-auto w-4/5 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5">
               {post.subtitle}
             </h4>
-          </div>
 
-          <div className="m-auto h-96 w-full bg-gray-300 italic sm:w-3/4 md:w-3/4 lg:w-3/4">
+            <div className="m-auto flex max-w-3xl justify-end sm:w-3/4 md:w-3/4 lg:w-3/4">
+              <InstagramIcon />
+              <FacebookIcon />
+              <LinkedInIcon />
+            </div>
+          </div>
+          <div className="m-auto h-96 w-full max-w-3xl bg-gray-300 italic sm:w-3/4 md:w-3/4 lg:w-3/4">
             Image mockup
           </div>
 
