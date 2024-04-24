@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import RootPage from "./pages/RootPage";
 import HomePage from "./pages/HomePage";
-import ProjectsProvider from "./providers/ProjectsProvider/ProjectsProvider";
+import ContentfulProvider from "./providers/ContentfulProvider/ContentfulProvider";
 import NewsPage from "./pages/NewsPage";
 import ProjectPage from "./pages/ProjectPage";
 
@@ -14,17 +14,17 @@ function App() {
               <Route
                 index
                 element={
-                  <ProjectsProvider>
+                  <ContentfulProvider>
                     <HomePage />
-                  </ProjectsProvider>
+                  </ContentfulProvider>
                 }
               />
               <Route
                 path="/projects/:projectName/:id"
                 element={
-                  <ProjectsProvider>
+                  <ContentfulProvider>
                     <ProjectPage />
-                  </ProjectsProvider>
+                  </ContentfulProvider>
                 }
               />
               <Route path="/newspage" element={<NewsPage />} />

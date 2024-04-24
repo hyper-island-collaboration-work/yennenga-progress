@@ -1,11 +1,11 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import ButtonLink from "../ButtonLink";
-import useProjects from "../../providers/ProjectsProvider/ProjectsProvider.hook";
+import useContentful from "../../providers/ContentfulProvider/ContentfulProvider.hook";
 import ProjectCard from "./ProjectCard";
 
 const ProjectCarouselSection = () => {
-  const { projectList } = useProjects();
+  const { projectList } = useContentful();
 
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({

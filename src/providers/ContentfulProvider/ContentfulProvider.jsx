@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { client } from "../../client";
-import ProjectsProviderContext from "./ProjectsProvider.context";
+import ContentfulProviderContext from "./ContentfulProvider.context";
 
-const ProjectsProvider = ({ children }) => {
+const ContentfulProvider = ({ children }) => {
   const [projectList, setProjectList] = useState([]);
-  console.log(projectList);
 
   const cleanUpProjectList = useCallback((rawData) => {
     const cleanProjectsData = rawData.map((project) => {
@@ -77,10 +76,10 @@ const ProjectsProvider = ({ children }) => {
   };
 
   return (
-    <ProjectsProviderContext.Provider value={value}>
+    <ContentfulProviderContext.Provider value={value}>
       {children}
-    </ProjectsProviderContext.Provider>
+    </ContentfulProviderContext.Provider>
   );
 };
 
-export default ProjectsProvider;
+export default ContentfulProvider;
