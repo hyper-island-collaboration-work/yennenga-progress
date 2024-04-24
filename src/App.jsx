@@ -9,27 +9,34 @@ function App() {
   return (
     <div className="">
       <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<RootPage />}>
-              <Route
-                index
-                element={
-                  <ContentfulProvider>
-                    <HomePage />
-                  </ContentfulProvider>
-                }
-              />
-              <Route
-                path="/projects/:projectName/:id"
-                element={
-                  <ContentfulProvider>
-                    <ProjectPage />
-                  </ContentfulProvider>
-                }
-              />
-              <Route path="/newspage" element={<NewsPage />} />
-            </Route>
-          </Routes>
+        <Routes>
+          <Route path="/" element={<RootPage />}>
+            <Route
+              index
+              element={
+                <ContentfulProvider>
+                  <HomePage />
+                </ContentfulProvider>
+              }
+            />
+            <Route
+              path="/projects/:projectName/:id"
+              element={
+                <ContentfulProvider>
+                  <ProjectPage />
+                </ContentfulProvider>
+              }
+            />
+            <Route
+              path="/newspage/:NewsTitle/:id"
+              element={
+                <ContentfulProvider>
+                  <NewsPage />
+                </ContentfulProvider>
+              }
+            />
+          </Route>
+        </Routes>
       </BrowserRouter>
     </div>
   );

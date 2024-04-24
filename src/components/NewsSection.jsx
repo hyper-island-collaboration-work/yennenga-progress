@@ -1,9 +1,18 @@
-import { newsPosts } from "../../mocknews";
-import NewsPost from "./NewsPost";
 import { Link } from "react-router-dom";
+import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
+import { useParams } from "react-router-dom";
+import NewsPost from "./NewsPost";
 
 export default function NewsSection() {
-  const fiveLatestPosts = newsPosts.slice(-5);
+  const { newsPosts } = useContentful();
+  const { id } = useParams();
+
+  // const fiveLatestPosts = newsPosts.slice(-5);
+
+  const newsPost =
+    newsPosts && newsPosts.length > 0
+      ? newsPosts.filter((item) => item.id === id)[0]
+      : null;
 
   return (
     <>
@@ -18,7 +27,7 @@ export default function NewsSection() {
         </div>
         <div className="flex-item-2 text-base md:w-2/4">
           <ul className="divide-y-[2px] divide-gray-400 border-t-[2px] border-gray-400">
-            {fiveLatestPosts.map((post) => (
+            {newsPosts.map((post) => (
               <li key={post.id}>
                 <NewsPost post={post} showFullPost={false} />
               </li>
