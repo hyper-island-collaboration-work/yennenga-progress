@@ -1,56 +1,18 @@
-import NewsPost from "./NewsPost";
 import { Link } from "react-router-dom";
-import { useState, useEffect, useCallback } from "react";
-import { client } from "../client";
+import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
+import { useParams } from "react-router-dom";
+import NewsPost from "./NewsPost";
 
 export default function NewsSection() {
-  //Fetch from contentful
-  const [postsLoading, setPostsLoading] = useState(false);
-  const [newsPosts, setNewsPosts] = useState([]);
-
-  const cleanUpNewsPostData = useCallback((rawData) => {
-    const cleanNewsPosts = rawData.map((NewsPost) => {
-      const { sys, fields } = NewsPost;
-      const { id } = sys;
-      const NewsTitle = fields.title;
-      const NewsSubtitle = fields.subtitle;
-      const NewsParagraph = fields.paragraph;
-      const NewsDate = fields.date;
-      const NewsImage = fields.image.fields.file.url;
-      const filteredNewsPostData = {
-        id,
-        NewsTitle,
-        NewsSubtitle,
-        NewsParagraph,
-        NewsDate,
-        NewsImage,
-      };
-      return filteredNewsPostData;
-    });
-    setNewsPosts(cleanNewsPosts);
-  }, []);
-
-  const getNewsPosts = useCallback(async () => {
-    setPostsLoading(true);
-    try {
-      const response = await client.getEntries({ content_type: "NewsPost" });
-      const responseData = response.items;
-      if (responseData) {
-        cleanUpNewsPostData(responseData);
-      } else {
-        setNewsPosts([]);
-      }
-      setPostsLoading(false);
-    } catch (error) {
-      setPostsLoading(false);
-    }
-  }, [cleanUpNewsPostData]);
-
-  useEffect(() => {
-    getNewsPosts();
-  }, [getNewsPosts]);
+  const { newsPosts } = useContentful();
+  const { id } = useParams();
 
   // const fiveLatestPosts = newsPosts.slice(-5);
+
+  const newsPost =
+    newsPosts && newsPosts.length > 0
+      ? newsPosts.filter((item) => item.id === id)[0]
+      : null;
 
   return (
     <>
