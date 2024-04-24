@@ -1,10 +1,9 @@
 import React, { useEffect, useState, useCallback, useRef } from "react";
 import { client } from "../../client";
-import ProjectsProviderContext from "./ProjectsProvider.context";
+import ContentfulProviderContext from "./ContentfulProvider.context";
 
-const ProjectsProvider = ({ children }) => {
+const ContentfulProvider = ({ children }) => {
   const [projectList, setProjectList] = useState([]);
-  console.log(projectList);
 
   const cleanUpProjectList = useCallback((rawData) => {
     const cleanProjectsData = rawData.map((project) => {
@@ -14,13 +13,41 @@ const ProjectsProvider = ({ children }) => {
       const type = fields.type;
       const description = fields.description;
       const mainImage = fields.mainImage.fields.file.url;
+      const aboutTheProject = fields.aboutTheProject;
+      const location = fields.location;
+      const status = fields.status;
+      const supervisor = fields.supervisor;
+      const actions = [
+        {
+          title: fields.action1Title,
+          description: fields.action1Description,
+          image: fields.action1Image.fields.file.url
+        },
+        {
+          title: fields.action2Title,
+          description: fields.action2Description,
+          image: fields.action2Image.fields.file.url
+        },
+        {
+          title: fields.action3Title,
+          description: fields.action3Description,
+          image: fields.action3Image.fields.file.url
+        }
+      ];
+
       const filteredProjectData = {
         id,
         title,
         type,
         description,
         mainImage,
+        aboutTheProject,
+        location,
+        status,
+        supervisor,
+        actions
       };
+      console.log(filteredProjectData);
       return filteredProjectData;
     });
     setProjectList(cleanProjectsData);
@@ -49,10 +76,10 @@ const ProjectsProvider = ({ children }) => {
   };
 
   return (
-    <ProjectsProviderContext.Provider value={value}>
+    <ContentfulProviderContext.Provider value={value}>
       {children}
-    </ProjectsProviderContext.Provider>
+    </ContentfulProviderContext.Provider>
   );
 };
 
-export default ProjectsProvider;
+export default ContentfulProvider;
