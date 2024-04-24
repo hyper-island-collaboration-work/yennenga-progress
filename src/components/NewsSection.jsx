@@ -1,9 +1,56 @@
-import { newsPosts } from "../../mocknews";
 import NewsPost from "./NewsPost";
 import { Link } from "react-router-dom";
+import { useState, useEffect, useCallback } from "react";
+import { client } from "../client";
 
 export default function NewsSection() {
-  const fiveLatestPosts = newsPosts.slice(-5);
+  //Fetch from contentful
+  const [postsLoading, setPostsLoading] = useState(false);
+  const [newsPosts, setNewsPosts] = useState([]);
+
+  const cleanUpNewsPostData = useCallback((rawData) => {
+    const cleanNewsPosts = rawData.map((NewsPost) => {
+      const { sys, fields } = NewsPost;
+      const { id } = sys;
+      const NewsTitle = fields.title;
+      const NewsSubtitle = fields.subtitle;
+      const NewsParagraph = fields.paragraph;
+      const NewsDate = fields.date;
+      const NewsImage = fields.image.fields.file.url;
+      const filteredNewsPostData = {
+        id,
+        NewsTitle,
+        NewsSubtitle,
+        NewsParagraph,
+        NewsDate,
+        NewsImage,
+      };
+      return filteredNewsPostData;
+    });
+    setNewsPosts(cleanNewsPosts);
+  }, []);
+
+  const getNewsPosts = useCallback(async () => {
+    setPostsLoading(true);
+    try {
+      const response = await client.getEntries({ content_type: "NewsPost" });
+      const responseData = response.items;
+      if (responseData) {
+        cleanUpNewsPostData(responseData);
+      } else {
+        setNewsPosts([]);
+      }
+      setPostsLoading(false);
+    } catch (error) {
+      setPostsLoading(false);
+    }
+  }, [cleanUpNewsPostData]);
+
+  useEffect(() => {
+    getNewsPosts();
+  }, [getNewsPosts]);
+
+  // const fiveLatestPosts = newsPosts.slice(-5);
 
   return (
     <>
@@ -18,7 +65,7 @@ export default function NewsSection() {
         </div>
         <div className="flex-item-2 text-base md:w-2/4">
           <ul className="divide-y-[2px] divide-gray-400 border-t-[2px] border-gray-400">
-            {fiveLatestPosts.map((post) => (
+            {newsPosts.map((post) => (
               <li key={post.id}>
                 <NewsPost post={post} showFullPost={false} />
               </li>
