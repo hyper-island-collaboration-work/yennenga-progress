@@ -30,7 +30,7 @@ export default function NewsPost({ post, showFullPost }) {
           </div>
 
           <div className="m-auto max-w-2xl pt-16 text-lg sm:w-3/5 lg:w-3/5">
-            <p className="mb-3 leading-tight">{post.NewsContent}</p>
+            <p className="mb-3 leading-tight">{post.NewsParagraph}</p>
           </div>
           <div className="bg-black"></div>
           {/* <div className="flex justify-center gap-2 pb-2 text-base">
