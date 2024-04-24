@@ -1,13 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useProjects from "../providers/ProjectsProvider/ProjectsProvider.hook";
+import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
 import HeroProjectSection from "../components/ProjectPage/HeroProjectSection";
 import MainImageSection from "../components/ProjectPage/MainImageSection";
 import ActionSection from "../components/ProjectPage/ActionSection";
 
 export default function ProjectPage() {
   const { id } = useParams();
-  const { projectList } = useProjects();
+  const { projectList } = useContentful();
 
   const project =
     projectList && projectList.length > 0
