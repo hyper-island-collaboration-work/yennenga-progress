@@ -37,17 +37,19 @@ const Header = () => {
 
   //styling if user is on newspage
   const location = useLocation();
-  const headerColor =
-    location.pathname === "/newspage" ? "bg-burkinaBlue" : "bg-stone-300";
-  // styling for links on newspage
-  const textColor =
-    headerColor === "bg-burkinaBlue" ? "text-white" : "text-black";
-
+  const isOnNewsPage = location.pathname.startsWith("/newspage");
+  const newsHeaderColor = isOnNewsPage ? "bg-darkBlue" : "bg-stone-300";
+  const newsTextColor = isOnNewsPage ? "text-white" : "text-black";
+  const newsLogoColor = isOnNewsPage ? (
+    <img src="/images/yp_logo_white.svg" alt="Logo" />
+  ) : (
+    <img src="/images/yp_logo_brown.svg" alt="Logo" />
+  );
   const handleMenu = () => {
     setopen((prev) => !prev);
   };
   return (
-    <div className={open ? "bg-orange-700" : `${headerColor}`}>
+    <div className={open ? "bg-orange-700" : `${newsHeaderColor}`}>
       <div className="mx-auto px-4 font-bold sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="item-center flex">
@@ -55,7 +57,7 @@ const Header = () => {
               {open ? (
                 <img src="/images/yp_logo_white.svg" alt="Logo" />
               ) : (
-                <img src="/images/yp_logo_brown.svg" alt="Logo" />
+                newsLogoColor
               )}
             </a>
           </div>
@@ -64,8 +66,11 @@ const Header = () => {
             <div className="ml-10 flex items-baseline space-x-4">
               {navlinks.map((link, index) => (
                 <a
+                  key={index}
                   className={`font-bold transition-all duration-500 hover:opacity-45 ${
-                    link.title === "INDIVIDUAL" ? "text-orange-700" : textColor
+                    link.title === "INDIVIDUAL"
+                      ? "text-orange-700"
+                      : newsTextColor
                   }`}
                   href={link.link}
                 >
