@@ -26,7 +26,7 @@ const HeroProjectSection = ({ project }) => {
           </li>
           <li>
             <p className=" text-base font-medium text-umber mb-1">GLOBAL GOALS</p>
-            <img src="/public/images/goal-city.png" className="w-12 h-12" />
+            <img src="../../images/goal-city.png" className="w-12 h-12" />
           </li>
         </ul>
         </div>

@@ -24,7 +24,8 @@ const Hero = () => {
       </h1>
       <div
         style={{
-          backgroundImage: `url('/public/images/hero_image_2.jpeg')`,
+          backgroundImage: `url('../images/hero_image_2.jpeg')`,
+
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -32,7 +33,7 @@ const Hero = () => {
       ></div>
       <div
         style={{
-          backgroundImage: `url('/public/images/hero_image_1.jpeg')`,
+          backgroundImage: `url('../images/hero_image_1.jpeg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -40,7 +41,7 @@ const Hero = () => {
       ></div>
       <div
         style={{
-          backgroundImage: `url('/public/images/hero_image_3.jpeg')`,
+          backgroundImage: `url('../images/hero_image_3.jpeg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
