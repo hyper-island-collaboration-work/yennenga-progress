@@ -2,12 +2,12 @@ import ButtonLink from "./ButtonLink";
 
 export default function ReadyToTakeAction() {
   return (
-    <section className="border bg-light p-10 pt-24">
+    <section className="border bg-light px-12 pb-24 pt-[192px]">
       <div>
-        <h3 className="pr-10 font-montserrat text-3xl font-medium md:pr-0 lg:text-5xl 2xl:text-[80px]">
+        <h3 className="font-montserrat text-3xl font-medium md:pb-12 md:pr-0 lg:text-5xl 2xl:text-[80px]">
           Ready to take action?
         </h3>
-        <div className="space-y-5 py-16 text-sm md:text-base">
+        <div className="space-y-5 text-sm md:text-base">
           <div>
             <ButtonLink buttonName="DONATE" />
           </div>
