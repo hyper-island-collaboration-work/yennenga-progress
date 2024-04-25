@@ -80,17 +80,19 @@ const ContentfulProvider = ({ children }) => {
       const { id } = sys;
       const NewsTitle = fields.title;
       const NewsSubtitle = fields.subtitle;
-      const NewsParagraph = fields.paragraph;
       const NewsDate = fields.date;
       const NewsImage = fields.image.fields.file.url;
+      const NewsContent = fields.content;
       const filteredNewsPostData = {
         id,
         NewsTitle,
         NewsSubtitle,
-        NewsParagraph,
         NewsDate,
         NewsImage,
+        NewsContent,
       };
+      console.log(rawData);
+
       return filteredNewsPostData;
     });
     setNewsPosts(cleanNewsPosts);

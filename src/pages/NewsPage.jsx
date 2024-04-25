@@ -6,16 +6,18 @@ export default function NewsPage() {
   const { id } = useParams();
   const { newsPosts } = useContentful();
 
-  const newsPost =
+  const selectedPost =
     newsPosts && newsPosts.length > 0
       ? newsPosts.filter((item) => item.id === id)[0]
       : null;
 
   return (
-    <>
-      {newsPosts.map((post) => (
-        <NewsPost post={post} showFullPost={true} />
-      ))}
-    </>
+    <div>
+      {selectedPost ? (
+        <NewsPost post={selectedPost} showFullPost={true} />
+      ) : (
+        <p>Post not found</p>
+      )}
+    </div>
   );
 }
