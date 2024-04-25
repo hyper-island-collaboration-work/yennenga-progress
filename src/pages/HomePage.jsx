@@ -11,7 +11,7 @@ const HomePage = () => {
     <>
       <Hero />
       <WWDSections />
-      <WWDVideoSection/>
+      {/* <WWDVideoSection/> */}
       <ProjectCarousel />
       <Partners />
       <NewsSection />

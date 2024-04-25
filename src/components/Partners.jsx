@@ -35,9 +35,9 @@ const Partners = () => {
   }, [imagesList]);
 
   return (
-    <section className=" bg-stone-300 font-montserrat flex flex-col py-[48px] lg:py-[120px]">
-      <h2 className=" mx-auto mb-[60px] lg:mb-[120px] max-w-[345px] lg:max-w-[520px] text-center text-[24px] lg:text-[40px] font-medium">
-        Our partnerships partnershipspartnerships countriescountries
+    <section className=" flex flex-col bg-stone-300 py-[48px] font-montserrat lg:pb-[96px] lg:pt-[192px]">
+      <h2 className=" mx-auto mb-[60px] max-w-[345px] text-center text-[24px] font-medium lg:mb-[96px] lg:max-w-[520px] lg:text-[40px]">
+        Our Partners
       </h2>
       <div className=" relative overflow-hidden">
         <motion.div
@@ -69,7 +69,7 @@ const Images = ({ imagesList }) => {
               backgroundPosition: "center center",
             }}
             transition={SPRING_OPTIONS}
-            className=" mr-12 lg:mr-[120px] aspect-video h-[40px] w-[120px] lg:h-[66px] lg:w-[200px] shrink-0 object-fill"
+            className=" mr-12 aspect-video h-[40px] w-[120px] shrink-0 object-fill lg:mr-[120px] lg:h-[66px] lg:w-[200px]"
           />
         );
       })}
