@@ -2,11 +2,34 @@ import InstagramIcon from "./Icons/InstagramIcon";
 import FacebookIcon from "./Icons/FacebookIcon";
 import LinkedInIcon from "./Icons/LinkedinIcon";
 import { Link } from "react-router-dom";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default function NewsPost({ post, showFullPost }) {
+export default function NewsPost({ post, showFullPost, onClick }) {
   //format the URL
-  const formattedTitle = post.NewsTitle.toLowerCase().replace(/\s+/g, "-");
+  const formattedTitle = encodeURIComponent(
+    post.NewsTitle.toLowerCase().replace(/\s+/g, "-"),
+  );
   const path = `/newspage/${formattedTitle}/${post.id}`;
+
+  const richTextStyling = {
+    renderNode: {
+      paragraph: (node, children) => (
+        <p className="mb-4 pb-2">{children}</p> // Add a bottom padding of 0.5rem (adjust as needed)
+      ),
+      "unordered-list": (node, children) => (
+        <ul className="list-disc pl-5">{children}</ul> // Adds a disc before each list item
+      ),
+      "ordered-list": (node, children) => (
+        <ol className="list-decimal pl-5">{children}</ol> // Adds numbers before each list item
+      ),
+      "list-item": (node, children) => (
+        <li className="mb-2">{children}</li> // Adds margin bottom to each list item
+      ),
+      blockquote: (node, children) => (
+        <blockquote className="border-l-4 pl-4 italic">{children}</blockquote> // Adds a border left and italic styling for quotations
+      ),
+    },
+  };
 
   return (
     <Link to={path} onClick={(evt) => onClick(evt)}>
@@ -28,18 +51,23 @@ export default function NewsPost({ post, showFullPost }) {
                 <LinkedInIcon />
               </div>
             </div>
-            <div className="m-auto h-96 w-full max-w-3xl bg-gray-300 italic sm:w-3/4 md:w-3/4 lg:w-3/4">
-              {post.NewsImage}
-            </div>
 
-            <div className="m-auto max-w-2xl pt-16 text-lg sm:w-3/5 lg:w-3/5">
-              <p className="mb-3 leading-tight">{post.NewsParagraph}</p>
+            <img
+              src={"https:" + post.NewsImage}
+              className="m-auto h-96 w-full max-w-3xl object-cover italic sm:w-3/4 md:w-3/4 lg:w-3/4"
+            ></img>
+
+            <div className="m-auto  mb-20 max-w-2xl pt-16 text-lg  sm:w-3/5 lg:w-3/5">
+              <div className="leading-tight">
+                {documentToReactComponents(post.NewsContent, richTextStyling)}
+              </div>
+
+              <Link to="/">
+                <a className="text-1xlfont-plexSerif font-bold md:block">
+                  Go back
+                </a>
+              </Link>
             </div>
-            <div className="bg-black"></div>
-            {/* <div className="flex justify-center gap-2 pb-2 text-base">
-            <p>{post.author}</p>
-            <p>{post.date}</p>
-          </div> */}
           </article>
         ) : (
           <article>

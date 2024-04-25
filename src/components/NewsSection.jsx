@@ -1,18 +1,11 @@
 import { Link } from "react-router-dom";
 import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
-import { useParams } from "react-router-dom";
 import NewsPost from "./NewsPost";
 
 export default function NewsSection() {
   const { newsPosts } = useContentful();
-  const { id } = useParams();
 
   // const fiveLatestPosts = newsPosts.slice(-5);
-
-  const newsPost =
-    newsPosts && newsPosts.length > 0
-      ? newsPosts.filter((item) => item.id === id)[0]
-      : null;
 
   return (
     <>
