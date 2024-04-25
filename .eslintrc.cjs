@@ -8,6 +8,8 @@ module.exports = {
     "plugin:react-hooks/recommended",
     "airbnb-base",
     "prettier",
+    "react-app", 
+    "react-app/jest"
   ],
   ignorePatterns: ["dist", ".eslintrc.cjs"],
   parserOptions: { ecmaVersion: "latest", sourceType: "module" },
