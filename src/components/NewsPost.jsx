@@ -3,6 +3,7 @@ import FacebookIcon from "./Icons/FacebookIcon";
 import LinkedInIcon from "./Icons/LinkedinIcon";
 import { Link } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import ButtonLink from "./ButtonLink";
 
 export default function NewsPost({ post, showFullPost, onClick }) {
   //format the URL
@@ -11,6 +12,7 @@ export default function NewsPost({ post, showFullPost, onClick }) {
   );
   const path = `/newspage/${formattedTitle}/${post.id}`;
 
+  //styling rich text from contentful
   const richTextStyling = {
     renderNode: {
       paragraph: (node, children) => (
@@ -31,6 +33,8 @@ export default function NewsPost({ post, showFullPost, onClick }) {
     },
   };
 
+  // functions to share on social media
+
   return (
     <Link to={path} onClick={(evt) => onClick(evt)}>
       <div className="news-post-container" id={post.id}>
@@ -46,8 +50,8 @@ export default function NewsPost({ post, showFullPost, onClick }) {
               </h4>
 
               <div className="m-auto flex max-w-3xl justify-end gap-2 sm:w-3/4 md:w-3/4 lg:w-3/4">
-                <InstagramIcon />
                 <FacebookIcon />
+                <InstagramIcon />
                 <LinkedInIcon />
               </div>
             </div>
@@ -63,9 +67,7 @@ export default function NewsPost({ post, showFullPost, onClick }) {
               </div>
 
               <Link to="/">
-                <a className="text-1xlfont-plexSerif font-bold md:block">
-                  Go back
-                </a>
+                <ButtonLink buttonName="Back" />
               </Link>
             </div>
           </article>
