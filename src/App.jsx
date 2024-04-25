@@ -4,12 +4,14 @@ import HomePage from "./pages/HomePage";
 import ContentfulProvider from "./providers/ContentfulProvider/ContentfulProvider";
 import NewsPage from "./pages/NewsPage";
 import ProjectPage from "./pages/ProjectPage";
+import UnderConstructionPage from "./pages/UnderConstructionPage";
 
 function App() {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
+        <Route path="/not-found" element={<UnderConstructionPage />}></Route>
           <Route path="/" element={<RootPage />}>
             <Route
               index

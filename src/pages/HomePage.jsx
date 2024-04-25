@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import Partners from "../components/Partners";
-import ProjectCarouselSection from "../components/Projects/ProjectCarouselSection";
+import ProjectCarousel from "../components/ProjectList/ProjectCarousel";
 import ReadyToTakeAction from "../components/ReadyToTakeAction";
 import NewsSection from "../components/NewsSection";
 import WWDSections from "../components/WWDSections";
@@ -12,7 +12,7 @@ const HomePage = () => {
       <Hero />
       <WWDSections />
       <WWDVideoSection/>
-      <ProjectCarouselSection />
+      <ProjectCarousel />
       <Partners />
       <NewsSection />
       <ReadyToTakeAction />

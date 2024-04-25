@@ -1,5 +1,4 @@
 import ButtonLink from "./ButtonLink";
-import RightArrowOneIcon from "./Icons/RightArrowOneIcon";
 
 export default function ReadyToTakeAction() {
   return (
@@ -10,16 +9,10 @@ export default function ReadyToTakeAction() {
         </h3>
         <div className="space-y-5 py-16 text-sm md:text-base">
           <div>
-            <div className="flex w-fit items-center gap-2 rounded-xl bg-sand p-1 font-plexSerif text-light">
-              <ButtonLink buttonName={"For Individual Donor"} />
-              <RightArrowOneIcon />
-            </div>
+            <ButtonLink buttonName="DONATE" />
           </div>
           <div>
-            <div className="flex w-fit items-center gap-2 rounded-xl bg-sand p-1 font-plexSerif text-light">
-              <ButtonLink buttonName={"For Business Partner"} />
-              <RightArrowOneIcon />
-            </div>
+            <ButtonLink buttonName="ENGAGE" />
           </div>
         </div>
       </div>

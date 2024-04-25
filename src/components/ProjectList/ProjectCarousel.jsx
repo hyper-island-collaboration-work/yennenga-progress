@@ -4,7 +4,7 @@ import ButtonLink from "../ButtonLink";
 import useContentful from "../../providers/ContentfulProvider/ContentfulProvider.hook";
 import ProjectCard from "./ProjectCard";
 
-const ProjectCarouselSection = () => {
+const ProjectCarousel = () => {
   const { projectList } = useContentful();
 
   const targetRef = useRef(null);
@@ -33,10 +33,13 @@ const ProjectCarouselSection = () => {
         </div>
       </section>
       <div className=" flex items-center justify-center">
-        <ButtonLink buttonName="All Projcets" buttonColor="#e7e5e4" />
+        <ButtonLink
+          buttonName="All Projects"
+          path="/not-found"
+        />
       </div>
     </div>
   );
 };
 
-export default ProjectCarouselSection;
+export default ProjectCarousel;
