@@ -35,7 +35,7 @@ export default function NewsPost({ post, showFullPost, onClick }) {
     <Link to={path} onClick={(evt) => onClick(evt)}>
       <div className="news-post-container" id={post.id}>
         {showFullPost ? (
-          <article className="m-auto bg-burkinaBlue p-3 font-plexSerif text-white">
+          <article className="m-auto bg-darkBlue p-3 font-plexSerif text-white">
             <div className="py-16 sm:py-20">
               <h3 className="m-auto pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5">
                 {post.NewsTitle}
