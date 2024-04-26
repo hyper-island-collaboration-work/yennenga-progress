@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
 import NewsPost from "./NewsPost";
+import ButtonLink from "./ButtonLink";
 
 export default function NewsSection() {
   const { newsPosts } = useContentful();
@@ -14,7 +15,7 @@ export default function NewsSection() {
           <h3 className="mb-10 font-plexSerif text-2xl font-bold">News</h3>
           <div className="all-news-link-top pb-7 md:hidden">
             <Link to="/newspage">
-              <a className="text-1xl font-plexSerif font-bold">All news</a>
+              <ButtonLink buttonName="All News" />
             </Link>
           </div>
         </div>
@@ -27,12 +28,8 @@ export default function NewsSection() {
             ))}
           </ul>
 
-          <div className="all-news-link-bottom pt-7">
-            <Link to="/newspage">
-              <a className="text-1xl hidden font-plexSerif font-bold md:block">
-                All news
-              </a>
-            </Link>
+          <div className="all-news-link-bottom hidden pt-7 md:block">
+            <ButtonLink buttonName="All News" path="/newspage" />
           </div>
         </div>
       </section>
