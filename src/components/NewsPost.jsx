@@ -1,9 +1,7 @@
-import InstagramIcon from "./Icons/InstagramIcon";
-import FacebookIcon from "./Icons/FacebookIcon";
-import LinkedInIcon from "./Icons/LinkedinIcon";
 import { Link } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import ButtonLink from "./ButtonLink";
+import SomeIcons from "./SoMeIcons";
 
 export default function NewsPost({ post, showFullPost, onClick }) {
   //format the URL
@@ -33,8 +31,6 @@ export default function NewsPost({ post, showFullPost, onClick }) {
     },
   };
 
-  // functions to share on social media
-
   return (
     <Link to={path} onClick={(evt) => onClick(evt)}>
       <div className="news-post-container" id={post.id}>
@@ -50,9 +46,7 @@ export default function NewsPost({ post, showFullPost, onClick }) {
               </h4>
 
               <div className="m-auto flex max-w-3xl justify-end gap-2 sm:w-3/4 md:w-3/4 lg:w-3/4">
-                <FacebookIcon />
-                <InstagramIcon />
-                <LinkedInIcon />
+                <SomeIcons />
               </div>
             </div>
 
