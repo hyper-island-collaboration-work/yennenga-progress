@@ -3,7 +3,7 @@ import ButtonLink from "./ButtonLink";
 export default function WWDSections() {
   return (
     <>
-      <section className="WWD base grid-row-auto lg:grid-rows-auto grid grid-cols-6 gap-2 bg-zinc-100 p-2 sm:gap-3 sm:p-7 lg:grid-cols-7 lg:gap-5">
+      <section className="WWD base grid-row-auto lg:grid-rows-auto grid grid-cols-6 gap-2  bg-stone-200 p-2 sm:gap-3 sm:p-7 lg:grid-cols-7 lg:gap-5">
         <h2 className="col-start-1 col-end-6 mb-4 font-montserrat text-2xl font-medium sm:col-end-4 lg:col-start-2 lg:col-end-4 lg:pt-10 lg:text-4xl">
           What we do What we do What we do
         </h2>
