@@ -11,7 +11,9 @@ export default function NewsSection({
     <>
       <section className="news-section flex flex-col justify-between  bg-stone-200 p-12 md:flex-row">
         <div className="flex-item-1 flex flex-row items-center justify-between md:items-start">
-          <h3 className="mb-10 font-plexSerif text-2xl font-bold">{title}</h3>
+          <h3 className="mb-10 font-montserrat text-[24px] font-medium">
+            {title}
+          </h3>
           <div className="all-news-link-top pb-7 md:hidden">
             <ButtonLink buttonName={linkText} path={linkPath} />
           </div>
