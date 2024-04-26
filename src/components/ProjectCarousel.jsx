@@ -1,7 +1,7 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import ButtonLink from "../ButtonLink";
-import useContentful from "../../providers/ContentfulProvider/ContentfulProvider.hook";
+import ButtonLink from "./ButtonLink";
+import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
 import ProjectCard from "./ProjectCard";
 
 const ProjectCarousel = () => {
@@ -33,7 +33,7 @@ const ProjectCarousel = () => {
         </div>
       </section>
       <div className=" flex items-center justify-center">
-        <ButtonLink buttonName="All Projects" path="/not-found" />
+        <ButtonLink buttonName="All Projects" path="/projects" />
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const ProjectCard = ({ card }) => {
   const formattedTitle = card.title.toLowerCase().replace(/\s+/g, "-");
-  const path = `/projects/${formattedTitle}/${card.id}`;
+  const path = `/project/${formattedTitle}/${card.id}`;
 
   return (
     <Link to={path} onClick={(evt) => onClick(evt)}>
