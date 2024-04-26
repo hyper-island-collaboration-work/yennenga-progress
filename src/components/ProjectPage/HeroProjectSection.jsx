@@ -2,14 +2,14 @@ import React from "react";
 
 const HeroProjectSection = ({ project }) => {
   return (
-    <section className=" py-[120px] text-white">
+    <section className=" py-[192px] text-white px-[48px]">
       <p className=" mb-6 font-plexSerif text-base font-medium">
         {project.type}
       </p>
       <h1 className="font-montserrat text-8xl font-medium">
         {project.title}
       </h1>
-      <div className=" grid grid-cols-2 gap-6 mt-[72px]">
+      <div className=" grid grid-cols-2 gap-6 mt-[96px]">
         <div>
         <ul className=" grid grid-cols-1 gap-6 font-plexSerif">
           <li>
@@ -26,7 +26,7 @@ const HeroProjectSection = ({ project }) => {
           </li>
           <li>
             <p className=" text-base font-medium text-umber mb-1">GLOBAL GOALS</p>
-            <div className=" w-12 h-12 bg-umber"></div>
+            <img src="../../images/goal-city.png" className="w-12 h-12" />
           </li>
         </ul>
         </div>

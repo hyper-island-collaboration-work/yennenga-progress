@@ -4,6 +4,7 @@ import useContentful from "../providers/ContentfulProvider/ContentfulProvider.ho
 import HeroProjectSection from "../components/ProjectPage/HeroProjectSection";
 import MainImageSection from "../components/ProjectPage/MainImageSection";
 import ActionSection from "../components/ProjectPage/ActionSection";
+import ReadyToTakeAction from "../components/ReadyToTakeAction";
 
 export default function ProjectPage() {
   const { id } = useParams();
@@ -15,12 +16,12 @@ export default function ProjectPage() {
       : null;
 
   return (
-    <div className="bg-darkBlue px-[60px]">
+    <div className="bg-darkBlue">
       {project && (
         <>
           <HeroProjectSection project={project} />
           <MainImageSection project={project} />
-          <div className=" flex w-[648px] flex-col text-white mb-[72px]">
+          <div className=" mb-[96px] flex w-[648px] flex-col px-[48px] text-white">
             <h2 className=" mb-6 font-montserrat text-[80px] font-medium leading-tight">
               About the project
             </h2>
@@ -28,7 +29,7 @@ export default function ProjectPage() {
               {project.aboutTheProject}
             </p>
           </div>
-          <ul className=" grid grid-cols-1 gap-[72px] pb-[120px]">
+          <ul className=" grid grid-cols-1 gap-[96px] px-[48px] pb-[120px]">
             <li>
               <ActionSection action={project.actions[0]} number="01" />
             </li>
@@ -41,6 +42,7 @@ export default function ProjectPage() {
           </ul>
         </>
       )}
+      <ReadyToTakeAction />
     </div>
   );
 }
