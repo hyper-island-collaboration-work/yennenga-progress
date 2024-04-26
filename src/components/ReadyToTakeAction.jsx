@@ -9,10 +9,10 @@ export default function ReadyToTakeAction() {
         </h3>
         <div className="text-[12px] md:space-y-5 md:text-base">
           <div>
-            <ButtonLink buttonName="DONATE" />
+            <ButtonLink buttonName="DONATE" path="/not-found" />
           </div>
           <div>
-            <ButtonLink buttonName="ENGAGE" />
+            <ButtonLink buttonName="ENGAGE" path="/not-found" />
           </div>
         </div>
       </div>
