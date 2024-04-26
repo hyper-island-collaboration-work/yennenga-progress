@@ -60,9 +60,7 @@ export default function NewsPost({ post, showFullPost, onClick }) {
                 {documentToReactComponents(post.NewsContent, richTextStyling)}
               </div>
 
-              <Link to="/">
-                <ButtonLink buttonName="Back" />
-              </Link>
+              <ButtonLink buttonName="Back" path="/" />
             </div>
           </article>
         ) : (
