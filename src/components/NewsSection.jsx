@@ -29,9 +29,7 @@ export default function NewsSection() {
           </ul>
 
           <div className="all-news-link-bottom hidden pt-7 md:block">
-            <Link to="/newspage">
-              <ButtonLink buttonName="All News" />
-            </Link>
+            <ButtonLink buttonName="All News" path="/newspage" />
           </div>
         </div>
       </section>
