@@ -1,4 +1,4 @@
-import NewsPost from "../components/NewsPost";
+import NewsPost from "../components/NewsPage/NewsPost";
 import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
 import { useParams } from "react-router-dom";
 

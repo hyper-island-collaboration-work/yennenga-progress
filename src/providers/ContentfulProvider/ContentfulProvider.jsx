@@ -82,6 +82,7 @@ const ContentfulProvider = ({ children }) => {
       const NewsSubtitle = fields.subtitle;
       const NewsDate = fields.date;
       const NewsImage = fields.image.fields.file.url;
+      const NewsImageTitle = fields.image.fields.title;
       const NewsContent = fields.content;
       const filteredNewsPostData = {
         id,
@@ -90,6 +91,7 @@ const ContentfulProvider = ({ children }) => {
         NewsDate,
         NewsImage,
         NewsContent,
+        NewsImageTitle,
       };
       console.log(rawData);
 
