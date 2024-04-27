@@ -1,6 +1,6 @@
 import Hero from "../components/Hero";
 import Partners from "../components/Partners";
-import ProjectCarousel from "../components/ProjectList/ProjectCarousel";
+import ProjectCarousel from "../components/ProjectCarousel";
 import ReadyToTakeAction from "../components/ReadyToTakeAction";
 import WWDSections from "../components/WWDSections";
 import DynamicListSection from "../components/DynamicListSection";

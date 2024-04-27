@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import ProjectCard from "../../components/ProjectList/ProjectCard";
+import ProjectCard from "../../components/ProjectCard";
 
 describe("ProjectCard component", () => {
   const mockCard = {
@@ -25,6 +25,6 @@ describe("ProjectCard component", () => {
   test("renders Link with correct path", () => {
     render(<ProjectCard card={mockCard} />, { wrapper: MemoryRouter });
     const linkElement = screen.getByRole("link", { name: /Project Title/i });
-    expect(linkElement).toHaveAttribute("href", "/projects/project-title/1");
+    expect(linkElement).toHaveAttribute("href", "/project/project-title/1");
   });
 });
