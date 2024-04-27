@@ -4,13 +4,11 @@ import ProjectCarousel from "../components/ProjectList/ProjectCarousel";
 import ReadyToTakeAction from "../components/ReadyToTakeAction";
 import WWDSections from "../components/WWDSections";
 import DynamicListSection from "../components/DynamicListSection";
-import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
-import NewsPost from "../components/NewsPost";
+import NewsPost from "../components/NewsPage/NewsPost";
+import { GetThreeLatestNewsPosts } from "../components/NewsPage/utils/GetThreeLatestNewsPosts";
 
 const HomePage = () => {
-  //data from context to newsSection
-  const { newsPosts } = useContentful();
-  const threeLatestNewsPosts = newsPosts.slice(0, 5);
+  const threeLatestNewsPosts = GetThreeLatestNewsPosts();
 
   return (
     <>
