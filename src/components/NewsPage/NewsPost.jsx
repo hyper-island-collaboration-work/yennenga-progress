@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import ButtonLink from "./ButtonLink";
-import SomeIcons from "./SoMeIcons";
+import ButtonLink from "../ButtonLink";
+import SomeIcons from "../SoMeIcons";
 
 export default function NewsPost({ post, showFullPost, onClick }) {
   //format the URL
@@ -37,11 +37,17 @@ export default function NewsPost({ post, showFullPost, onClick }) {
         {showFullPost ? (
           <article className="m-auto bg-darkBlue p-3 font-plexSerif text-white">
             <div className="py-16 sm:py-20">
-              <h3 className="m-auto pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5">
+              <h3
+                data-testid="news-post-title"
+                className="m-auto pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5"
+              >
                 {post.NewsTitle}
               </h3>
 
-              <h4 className="m-auto w-4/5 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5">
+              <h4
+                className="m-auto w-4/5 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5"
+                data-testid="news-post-subtitle"
+              >
                 {post.NewsSubtitle}
               </h4>
 
@@ -53,12 +59,14 @@ export default function NewsPost({ post, showFullPost, onClick }) {
             <img
               src={"https:" + post.NewsImage}
               className="m-auto h-96 w-full max-w-3xl object-cover italic sm:w-3/4 md:w-3/4 lg:w-3/4"
+              alt={post.NewsImageTitle}
+              data-testid="news-post-image"
             ></img>
 
             <div className="m-auto  mb-20 max-w-2xl pt-16 text-lg  sm:w-3/5 lg:w-3/5">
-              <div className="leading-tight">
+              <p className="leading-tight" data-testid="news-post-content">
                 {documentToReactComponents(post.NewsContent, richTextStyling)}
-              </div>
+              </p>
 
               <ButtonLink buttonName="Back" path="/" />
             </div>
