@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const navlinks = [
   {
@@ -12,7 +13,7 @@ const navlinks = [
   },
   {
     title: "PROJECTS",
-    link: "/projects",
+    link: "/all-projects",
   },
   {
     title: "ABOUT",
@@ -38,11 +39,12 @@ const Header = () => {
   const location = useLocation();
   const isOnNewsPage = location.pathname.startsWith("/newspage");
   const isOnProjectPage = location.pathname.startsWith("/project");
-  const blueHeaderColor =
+
+  const headerColor =
     isOnNewsPage || isOnProjectPage ? "bg-darkBlue" : "bg-stone-200";
-  const blueTextColor =
+  const textColor =
     isOnNewsPage || isOnProjectPage ? "text-white" : "text-black";
-  const blueLogoColor =
+  const logoColor =
     isOnNewsPage || isOnProjectPage ? (
       <img src="/images/yp_logo_white.svg" alt="Logo" />
     ) : (
@@ -53,7 +55,7 @@ const Header = () => {
   };
 
   return (
-    <div className={`${open ? "bg-orange-700" : blueHeaderColor} pt-12`}>
+    <div className={`${open ? "bg-orange-700" : headerColor} pt-12`}>
       <div className="mx-auto px-4 font-montserrat font-semibold sm:px-6 lg:h-[68px] lg:px-8">
         <div className="flex h-16 items-end justify-between">
           <div className="item-center flex">
@@ -61,14 +63,14 @@ const Header = () => {
               {open ? (
                 <img src="/images/yp_logo_white.svg" alt="Logo" />
               ) : (
-                blueLogoColor
+                logoColor
               )}
             </a>
           </div>
           {/* navlinks */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              {navlinks.map((link, index) => (
+              {navlinks.map((navLinkItem, index) => (
                 // <a
                 //   key={index}
                 //   className={` transition-all duration-500 hover:opacity-45 ${
@@ -80,12 +82,12 @@ const Header = () => {
                 // >
                 //   {link.title}
                 // </a>
-                <a
-                  // className="group relative h-5 overflow-hidden cursor-pointer"
+                <NavLink
+                  to={navLinkItem.link}
                   className={` group relative h-5 cursor-pointer overflow-hidden ${
-                    link.title === "INDIVIDUAL"
+                    navLinkItem.title === "INDIVIDUAL"
                       ? "text-orange-700"
-                      : blueTextColor
+                      : textColor
                   }`}
                   key={index}
                 >
@@ -94,13 +96,13 @@ const Header = () => {
                     className="transition duration-300 group-hover:-translate-y-5 "
                   >
                     <div className="flex h-5 items-center justify-center">
-                      <span className=""> {link.title}</span>
+                      <span className=""> {navLinkItem.title}</span>
                     </div>
                     <div className="flex h-5 items-center justify-center">
-                      <span className=""> {link.title}</span>
+                      <span className=""> {navLinkItem.title}</span>
                     </div>
                   </div>
-                </a>
+                </NavLink>
               ))}
             </div>
           </div>

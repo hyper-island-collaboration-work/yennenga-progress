@@ -55,19 +55,32 @@ const ContentfulProvider = ({ children }) => {
     setProjectList(cleanProjectsData);
   }, []);
 
-  const fetchProjects = useCallback(async () => {
-    try {
-      const response = await client.getEntries({
-        content_type: "project",
-      });
+  // const fetchProjects = useCallback(async () => {
+  //   try {
+  //     const response = await client.getEntries({
+  //       content_type: "project",
+  //     });
+  //     const responseData = response.items;
+  //     if (responseData) {
+  //       cleanUpProjectList(responseData);
+  //     } else setProjectList([]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }, []);
+
+  const fetchProjects = () => {
+    client
+    .getEntries({content_type: "project"})
+    .then((response) => {
       const responseData = response.items;
-      if (responseData) {
-        cleanUpProjectList(responseData);
-      } else setProjectList([]);
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+      if(responseData) {cleanUpProjectList(responseData)}
+      else setProjectList([]);
+    })
+    .catch((error) => {
+      console.log(error)
+    });
+  }
 
   useEffect(() => {
     fetchProjects();

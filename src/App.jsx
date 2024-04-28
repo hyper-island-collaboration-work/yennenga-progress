@@ -31,7 +31,7 @@ function App() {
               }
             />
             <Route
-              path="/projects"
+              path="/all-projects"
               element={
                 <ContentfulProvider>
                   <ProjectsPage />

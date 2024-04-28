@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HiArrowLongRight } from "react-icons/hi2";
+// import { HiArrowLongRight } from "react-icons/hi2";
 
 const ButtonLink = ({ buttonName, path }) => {
   const ariaLabel = `${buttonName} link button`;
@@ -35,7 +35,8 @@ const ButtonLink = ({ buttonName, path }) => {
           hover:before:scale-x-100 
           "
           >
-            <HiArrowLongRight className=" z-10 h-6 w-6 " />
+            <img className=" z-10 h-6 w-6 " src="../images/arrow_icon.svg" />
+            {/* <HiArrowLongRight className=" z-10 h-6 w-6 " /> */}
           </div>
         </div>
       </div>
