@@ -33,7 +33,7 @@ const ProjectCarousel = () => {
         </div>
       </section>
       <div className=" flex items-center justify-center">
-        <ButtonLink buttonName="All Projects" path="/projects" />
+        <ButtonLink buttonName="All Projects" path="/all-projects" />
       </div>
     </div>
   );
