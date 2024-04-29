@@ -18,14 +18,14 @@ MVP project of the website for the non-profit organization Yennenga Progress as 
 * authorized and unauthorized states and task management in the profile have been worked out.
 
 ## Project links:
-### Website: [Visit our website](https://to-do-app-git-main-g6d.vercel.app/)
+### Website: [Visit our website](https://yennengaprogress-hi.web.app)
 
 ## Third-party libraries:
-### CSS framework Tailwindcss: [Tailwind](https://tailwindcss.com/)
-### Animation library Framer Motion: [Framer Motion](https://www.framer.com/motion/)
-### Custom Content Management Contentful: [Contentful](https://www.contentful.com/get-started/)
-### Documentation generator in HTML jsdoc:[jsdoc](https://jsdoc.app/)
-### JavaScript Testing Jest:[Jest](https://jestjs.io/)
+* CSS framework Tailwindcss: [Tailwind](https://tailwindcss.com/)
+* Animation library Framer Motion: [Framer Motion](https://www.framer.com/motion/)
+* Custom Content Management Contentful: [Contentful](https://www.contentful.com/get-started/)
+* Documentation generator in HTML jsdoc:[jsdoc](https://jsdoc.app/)
+* JavaScript Testing Jest:[Jest](https://jestjs.io/)
 
 
 ## Project Setup Instructions:
