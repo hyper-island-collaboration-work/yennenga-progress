@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
  * @param {string} [options.buttonName] - The name of the button.
  * @param {string} [options.path="not-found"] - The path associated with the button.
  * @returns {JSX.Element} The link button component.
+ * 
+ * ![Button link example](/public/docsImages/link_button.jpg)
  */
 
 const ButtonLink = ({ buttonName, path = "not-found" }) => {
