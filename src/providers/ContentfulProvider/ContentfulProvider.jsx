@@ -49,25 +49,10 @@ const ContentfulProvider = ({ children }) => {
         supervisor,
         actions,
       };
-      // console.log(filteredProjectData);
       return filteredProjectData;
     });
     setProjectList(cleanProjectsData);
   }, []);
-
-  // const fetchProjects = useCallback(async () => {
-  //   try {
-  //     const response = await client.getEntries({
-  //       content_type: "project",
-  //     });
-  //     const responseData = response.items;
-  //     if (responseData) {
-  //       cleanUpProjectList(responseData);
-  //     } else setProjectList([]);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }, []);
 
   const fetchProjects = () => {
     client

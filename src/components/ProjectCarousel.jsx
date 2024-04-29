@@ -19,11 +19,14 @@ const ProjectCarousel = () => {
       <p className=" px-6 font-montserrat text-[12px] md:text-center md:text-[16px]">
         OUR PROJECTS
       </p>
-      <h2 className=" px-6 font-montserrat text-2xl md:text-center lg:text-8xl lg:py-12">
+      <h2 className=" px-6 font-montserrat text-2xl md:text-center lg:py-12 lg:text-8xl">
         Explore the possibilities
       </h2>
-      <section ref={targetRef} className="relative h-[637px] bg-sand lg:mb-[80px]">
-        <div className="sticky top-0 flex items-center h-full overflow-hidden">
+      <section
+        ref={targetRef}
+        className="relative h-[637px] bg-sand lg:mb-[80px]"
+      >
+        <div className="sticky top-0 flex h-full items-center overflow-hidden">
           <motion.div style={{ x }} className="flex gap-6 md:gap-14">
             {projectList &&
               projectList.map((card) => {

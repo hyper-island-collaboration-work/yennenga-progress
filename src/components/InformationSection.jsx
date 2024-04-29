@@ -1,5 +1,21 @@
 import ButtonLink from "./ButtonLink";
 
+/**
+ * The InformationSection component renders a section with a title, description, images, and an optional link button.
+ *
+ * @param {Object} options - Options object for configuring the component.
+ * @param {string} [options.title] - The title of the section.
+ * @param {string} [options.description] - The description text to display.
+ * @param {string} [options.image1] - The path to the first image to display.
+ * @param {string} [options.image2] - The path to the second image to display.
+ * @param {string} [options.linkText] - The text to display on the link button.
+ * @param {string} [options.linkPath="/not-found"] - The path associated with the link button.
+ * @param {boolean} [options.textFirst=true] - Determines if the version with text first or image first is rendered.
+ * @returns {JSX.Element} The rendered InformationSection component.
+ *
+ * ![InformationSection example](/public/docsImages/informationSection.png)
+ */
+
 export default function InformationSection({
   title,
   description,

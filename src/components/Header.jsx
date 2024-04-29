@@ -33,6 +33,11 @@ const navlinks = [
   },
 ];
 
+/**
+ * Description placeholder
+ *
+ * @returns {*}
+ */
 const Header = () => {
   const [open, setopen] = useState(false);
 
@@ -67,21 +72,9 @@ const Header = () => {
               )}
             </a>
           </div>
-          {/* navlinks */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navlinks.map((navLinkItem, index) => (
-                // <a
-                //   key={index}
-                //   className={` transition-all duration-500 hover:opacity-45 ${
-                //     link.title === "INDIVIDUAL"
-                //       ? "text-orange-700"
-                //       : blueTextColor
-                //   }`}
-                //   href={link.link}
-                // >
-                //   {link.title}
-                // </a>
                 <NavLink
                   to={navLinkItem.link}
                   className={` group relative h-5 cursor-pointer overflow-hidden ${
@@ -106,7 +99,6 @@ const Header = () => {
               ))}
             </div>
           </div>
-          {/* hamburger button */}
           <div className="-mr-2 flex md:hidden">
             <button
               type="button"
