@@ -1,6 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Component representing a project card.
+ *
+ * @param {Object} props - The props object.
+ * @param {Object} props.card - The project card data.
+ * @param {string} props.card.title - The title of the project.
+ * @param {string} props.card.type - The type of the project.
+ * @param {string} props.card.mainImage - The URL of the main image for the project.
+ * @param {string} props.card.id - The unique identifier of the project.
+ * @returns {JSX.Element} The project card component.
+ * 
+ * ![Project card example](/public/docsImages/project_card.jpg)
+ */
+
 const ProjectCard = ({ card }) => {
   const formattedTitle = card.title.toLowerCase().replace(/\s+/g, "-");
   const path = `/project/${formattedTitle}/${card.id}`;
