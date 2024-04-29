@@ -1,23 +1,31 @@
 import { Link } from "react-router-dom";
-// import { HiArrowLongRight } from "react-icons/hi2";
 
-const ButtonLink = ({ buttonName, path }) => {
-  const ariaLabel = `${buttonName} link button`;
+/**
+ * The link button accepts the button's name and path as a string.
+ *
+ * @param {Object} options - Options object.
+ * @param {string} [options.buttonName] - The name of the button.
+ * @param {string} [options.path="not-found"] - The path associated with the button.
+ * @returns {JSX.Element} The link button component.
+ */
+
+const ButtonLink = ({ buttonName, path = "not-found" }) => {
+  const nameButton = buttonName ? `${buttonName} link button` : "button";
   return (
     <Link to={path}>
       <div>
-        <div className=" flex w-fit cursor-pointer items-center justify-center group relative">
+        <div className=" group relative flex w-fit cursor-pointer items-center justify-center">
           <div className="group relative h-12 overflow-hidden rounded-full pl-4 pr-6 font-montserrat text-[16px]">
             <div
               aria-hidden="true"
-              aria-label={ariaLabel}
+              aria-label={nameButton}
               className="transition duration-300 group-hover:-translate-y-12 "
             >
               <div className="flex h-12 items-center justify-center">
-                <span className="">{buttonName}</span>
+                <span className="">{nameButton}</span>
               </div>
               <div className="flex h-12 items-center justify-center">
-                <span className="">{buttonName}</span>
+                <span className="">{nameButton}</span>
               </div>
             </div>
           </div>
@@ -36,7 +44,6 @@ const ButtonLink = ({ buttonName, path }) => {
           "
           >
             <img className=" z-10 h-6 w-6 " src="../images/arrow_icon.svg" />
-            {/* <HiArrowLongRight className=" z-10 h-6 w-6 " /> */}
           </div>
         </div>
       </div>
