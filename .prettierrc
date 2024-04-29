@@ -3,9 +3,8 @@
   "plugins": ["prettier", "prettier-plugin-tailwindcss"],
   "rules": {
     "prettier/prettier": ["error"],
-    "semi": false,
-    "singleQuote": true,
+    "singleQuote": false,
     "trailingComma": "es5",
-    "jsxSingleQuote": true
+    "jsxSingleQuote": false
   }
 }
