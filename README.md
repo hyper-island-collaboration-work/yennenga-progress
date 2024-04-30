@@ -6,16 +6,6 @@ MVP project of the website for the non-profit organization Yennenga Progress as 
 
 ## Tools and stack: 
 * HTML / Tailwindcss / React.js / Contentful CMS / Jest / jsdoc / Test Renderer
-  
-## Here's what was done:
-* set up infrastructure and created Express server;
-* connected database created API schemas and resource models;
-* implemented authentication and authorization on the server;
-* the backend was deployed on Render;
-* components made up in React;
-* create the logic and layout of registration, login, profile editing, and tasks pages;
-* asynchronous GET-, PATCH-, DELETE- and POST-requests to the API were implemented;
-* authorized and unauthorized states and task management in the profile have been worked out.
 
 ## Project links:
 ### Website: [Visit our website](https://yennengaprogress-hi.web.app)
