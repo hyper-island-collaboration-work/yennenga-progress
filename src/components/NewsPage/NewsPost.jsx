@@ -33,42 +33,34 @@ export default function NewsPost({ post, showFullPost, onClick }) {
 
   return (
     <Link to={path} onClick={(evt) => onClick(evt)}>
-      <div className="news-post-container" id={post.id}>
+      <div className="news-post-container h-full" id={post.id}>
         {showFullPost ? (
-          <article className="m-auto bg-darkBlue p-3 font-plexSerif text-white">
+          <article className="m-auto bg-darkBlue pb-20 font-plexSerif text-white">
             <div className="py-16 sm:py-20">
-              <h3
-                data-testid="news-post-title"
-                className="m-auto pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5"
-              >
+              <h3 className="m-auto pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5">
                 {post.NewsTitle}
               </h3>
 
-              <h4
-                className="m-auto w-4/5 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5"
-                data-testid="news-post-subtitle"
-              >
+              <h4 className="m-auto w-4/5 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5">
                 {post.NewsSubtitle}
               </h4>
 
-              <div className="m-auto flex max-w-3xl justify-end gap-2 sm:w-3/4 md:w-3/4 lg:w-3/4">
+              <div className="m-auto flex max-w-3xl justify-end gap-2 ">
                 <SomeIcons />
               </div>
             </div>
 
             <img
               src={"https:" + post.NewsImage}
-              className="m-auto h-96 w-full max-w-3xl object-cover italic sm:w-3/4 md:w-3/4 lg:w-3/4"
+              className="h-96 w-full object-cover italic sm:h-[760px]"
               alt={post.NewsImageTitle}
               data-testid="news-post-image"
             ></img>
 
-            <div className="m-auto  mb-20 max-w-2xl pt-16 text-lg  sm:w-3/5 lg:w-3/5">
-              <p className="leading-tight" data-testid="news-post-content">
+            <div className="max-w-1xl  m-auto mb-20 pt-16 text-lg  sm:w-3/5 lg:w-3/5">
+              <p className="leading-tight">
                 {documentToReactComponents(post.NewsContent, richTextStyling)}
               </p>
-
-              <ButtonLink buttonName="Back" path="/" />
             </div>
           </article>
         ) : (
