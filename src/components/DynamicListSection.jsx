@@ -1,10 +1,10 @@
 import ButtonLink from "./ButtonLink";
 
-export default function NewsSection({
+export default function DynamicListSection({
   title,
   content,
   linkText,
-  linkPath,
+  path,
   renderItem,
 }) {
   return (
@@ -15,7 +15,7 @@ export default function NewsSection({
             {title}
           </h3>
           <div className="all-news-link-top pb-7 md:hidden">
-            <ButtonLink buttonName={linkText} path={linkPath} />
+            <ButtonLink buttonName={linkText} path={path} />
           </div>
         </div>
         <div className="flex-item-2 text-base md:w-2/4">
@@ -26,7 +26,7 @@ export default function NewsSection({
           </ul>
 
           <div className="all-news-link-bottom hidden pt-7 md:block">
-            <ButtonLink buttonName={linkText} />
+            <ButtonLink buttonName={linkText} path={path} />
           </div>
         </div>
       </section>

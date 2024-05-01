@@ -43,7 +43,7 @@ const HomePage = () => {
         title="News"
         content={threeLatestNewsPosts}
         linkText="All News"
-        linkPath="/newspage"
+        path="/newspage/all"
         renderItem={(post) => (
           <NewsPost key={post.id} post={post} showFullPost={false} />
         )}

@@ -6,6 +6,7 @@ import NewsPage from "./pages/NewsPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import ProjectPage from "./pages/ProjectPage";
 import UnderConstructionPage from "./pages/UnderConstructionPage";
+import AllNewsPage from "./pages/AllNewsPage";
 
 function App() {
   return (
@@ -43,6 +44,14 @@ function App() {
               element={
                 <ContentfulProvider>
                   <NewsPage />
+                </ContentfulProvider>
+              }
+            />
+            <Route
+              path="/newspage/all"
+              element={
+                <ContentfulProvider>
+                  <AllNewsPage />
                 </ContentfulProvider>
               }
             />
