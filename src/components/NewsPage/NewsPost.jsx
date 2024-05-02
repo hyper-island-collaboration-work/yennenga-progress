@@ -37,15 +37,15 @@ export default function NewsPost({ post, showFullPost, onClick }) {
         {showFullPost ? (
           <article className="m-auto bg-darkBlue pb-20 font-plexSerif text-white">
             <div className="py-16 sm:py-20">
-              <h3 className="m-auto pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5">
+              <h3 className="m-auto px-4 pb-5 text-center font-montserrat text-4xl sm:w-3/5 lg:w-3/5">
                 {post.NewsTitle}
               </h3>
 
-              <h4 className="m-auto w-4/5 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5">
+              <h4 className="m-auto px-4 pb-5 text-center text-lg leading-tight sm:w-3/5 lg:w-3/5">
                 {post.NewsSubtitle}
               </h4>
 
-              <div className="m-auto flex max-w-3xl justify-end gap-2 ">
+              <div className="m-auto flex max-w-3xl justify-end gap-2 px-4 ">
                 <SomeIcons />
               </div>
             </div>
@@ -57,10 +57,16 @@ export default function NewsPost({ post, showFullPost, onClick }) {
               data-testid="news-post-image"
             ></img>
 
-            <div className="max-w-1xl  m-auto mb-20 pt-16 text-lg  sm:w-3/5 lg:w-3/5">
+            <div className="max-w-1xl m-auto mb-20 px-4 pt-16 text-lg  sm:w-3/5 lg:w-3/5">
               <p className="leading-tight">
                 {documentToReactComponents(post.NewsContent, richTextStyling)}
               </p>
+
+              <ButtonLink
+                path="/"
+                buttonName="Back to homepage"
+                textColor="text-white"
+              />
             </div>
           </article>
         ) : (
