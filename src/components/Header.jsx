@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const navlinks = [
   {
@@ -41,6 +42,18 @@ const navlinks = [
 const Header = () => {
   const [open, setopen] = useState(false);
 
+  // translations
+  const { t, i18n } = useTranslation();
+  const languages = [
+    { code: "en", name: "English" },
+    { code: "se", name: "Svenska" },
+  ];
+  const toggleLanguage = () => {
+    const newLanguage = i18n.language === "en" ? "se" : "en";
+    i18n.changeLanguage(newLanguage);
+  };
+
+  // handle styling depending on wich page
   const location = useLocation();
   const isOnNewsPage = location.pathname.startsWith("/newspage");
   const isOnProjectPage = location.pathname.startsWith("/project");
@@ -74,6 +87,9 @@ const Header = () => {
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
+              <button onClick={toggleLanguage}>
+                {i18n.language === "en" ? "SE" : "EN"}
+              </button>
               {navlinks.map((navLinkItem, index) => (
                 <NavLink
                   to={navLinkItem.link}
