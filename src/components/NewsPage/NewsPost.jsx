@@ -28,6 +28,9 @@ export default function NewsPost({ post, showFullPost, onClick }) {
       blockquote: (node, children) => (
         <blockquote className="border-l-4 pl-4 italic">{children}</blockquote> // Adds a border left and italic styling for quotations
       ),
+      link: (node, children) => {
+        <a className="text-umber">{children}</a>;
+      },
     },
   };
 
@@ -52,7 +55,7 @@ export default function NewsPost({ post, showFullPost, onClick }) {
 
             <img
               src={"https:" + post.NewsImage}
-              className="h-96 w-full object-cover italic sm:h-[760px]"
+              className="h-96 w-full object-cover italic sm:h-[760px] md:h-[760px] lg:h-[960px]"
               alt={post.NewsImageTitle}
               data-testid="news-post-image"
             ></img>
