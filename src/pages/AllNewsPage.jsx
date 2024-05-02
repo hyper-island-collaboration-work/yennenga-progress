@@ -1,7 +1,6 @@
 import React from "react";
 import useContentful from "../providers/ContentfulProvider/ContentfulProvider.hook";
 import NewsPost from "../components/NewsPage/NewsPost";
-import { useLayoutEffect } from "react";
 
 const AllNewsPage = () => {
   const { newsPosts } = useContentful();
@@ -9,12 +8,12 @@ const AllNewsPage = () => {
   return (
     <>
       {/* TODO: Implement pagination & scroll to top link*/}
-      <ul className="">
-        <li className="">
-          {newsPosts.map((post) => (
+      <ul className="bg-darkBlue">
+        {newsPosts.map((post) => (
+          <li className="">
             <NewsPost key={post.id} post={post} showFullPost={true} />
-          ))}
-        </li>
+          </li>
+        ))}
       </ul>
     </>
   );
