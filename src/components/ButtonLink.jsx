@@ -7,16 +7,18 @@ import { Link } from "react-router-dom";
  * @param {string} [options.buttonName] - The name of the button.
  * @param {string} [options.path="not-found"] - The path associated with the button.
  * @returns {JSX.Element} The link button component.
- * 
+ *
  * ![Button link example](/public/docsImages/link_button.jpg)
  */
 
-const ButtonLink = ({ buttonName, path = "not-found" }) => {
-  const nameButton = buttonName ? `${buttonName} link button` : "button";
+const ButtonLink = ({ buttonName, path = "not-found", textColor }) => {
+  const nameButton = buttonName ? `${buttonName}` : "button";
   return (
     <Link to={path}>
       <div>
-        <div className=" group relative flex w-fit cursor-pointer items-center justify-center">
+        <div
+          className={`${textColor} group relative flex w-fit cursor-pointer items-center justify-center`}
+        >
           <div className="group relative h-12 overflow-hidden rounded-full pl-4 pr-6 font-montserrat text-[16px]">
             <div
               aria-hidden="true"
