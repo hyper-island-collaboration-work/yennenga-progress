@@ -19,7 +19,7 @@ const ButtonLink = ({ buttonName, path = "not-found", textColor }) => {
         <div
           className={`${textColor} group relative flex w-fit cursor-pointer items-center justify-center`}
         >
-          <div className="group relative h-12 overflow-hidden rounded-full pl-4 pr-6 font-montserrat text-[16px]">
+          <div className="group relative h-12 overflow-hidden rounded-full pr-6 font-montserrat text-[16px]">
             <div
               aria-hidden="true"
               aria-label={nameButton}

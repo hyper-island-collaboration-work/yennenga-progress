@@ -2,34 +2,35 @@ import Hero from "../components/Hero";
 import Partners from "../components/Partners";
 import ProjectCarousel from "../components/ProjectCarousel";
 import ReadyToTakeAction from "../components/ReadyToTakeAction";
-
 import DynamicListSection from "../components/DynamicListSection";
 import NewsPost from "../components/NewsPage/NewsPost";
 import { GetThreeLatestNewsPosts } from "../components/NewsPage/utils/GetThreeLatestNewsPosts";
 import InformationSection from "../components/InformationSection";
+import { useTranslation } from "react-i18next";
 
 const HomePage = () => {
+  // for fetching only last three newsPosts
   const threeLatestNewsPosts = GetThreeLatestNewsPosts();
+
+  // for translations
+  const { t } = useTranslation();
 
   return (
     <>
       <Hero />
       <InformationSection
-        title="What we do What we do What we do"
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos quam
-            inventore dicta quisquam? Omnis mollitia.Lorem ipsum dolor sit amet
-            consectetur, adipisicing elit."
+        title={t("informationSection1Title")}
+        description={t("informationSection1Description")}
         image1="/images/WWD_mother-carrying-child.jfif"
         image2="/images/WWD_mother-and-child.jfif"
         linkPath="/not-found"
-        linkText="What We Do"
+        linkText={t("informationSection1Button")}
         textFirst={true}
       />
       <InformationSection
-        title="How it works How it works How it works"
-        description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos
-              quam inventore dicta quisquam? Omnis mollitia.Lorem ipsum dolor
-              sit amet consectetur, adipisicing elit."
+        title="
+Empowering Communities: The Yennenga Progress Approach"
+        description="Yennenga Progress takes a holistic approach to address all UN Global Goals, combining entrepreneurial thinking with local empowerment in Nakamtenga, Burkina Faso. Our global network provides ongoing training to local Change Makers, fostering collaboration to develop effective solutions. We're pioneering a social franchising model to create jobs and empower villages for lasting progress. Learn more about how it works."
         image1="/images/WWD_children-playing.jfif"
         image2="/images/WWD_children-in-window.jfif"
         linkPath="/not-found"
