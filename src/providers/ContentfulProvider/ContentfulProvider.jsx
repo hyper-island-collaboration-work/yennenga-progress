@@ -56,16 +56,17 @@ const ContentfulProvider = ({ children }) => {
 
   const fetchProjects = () => {
     client
-    .getEntries({content_type: "project"})
-    .then((response) => {
-      const responseData = response.items;
-      if(responseData) {cleanUpProjectList(responseData)}
-      else setProjectList([]);
-    })
-    .catch((error) => {
-      console.log(error)
-    });
-  }
+      .getEntries({ content_type: "project" })
+      .then((response) => {
+        const responseData = response.items;
+        if (responseData) {
+          cleanUpProjectList(responseData);
+        } else setProjectList([]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     fetchProjects();
@@ -91,8 +92,6 @@ const ContentfulProvider = ({ children }) => {
         NewsContent,
         NewsImageTitle,
       };
-      console.log(rawData);
-
       return filteredNewsPostData;
     });
     setNewsPosts(cleanNewsPosts);
