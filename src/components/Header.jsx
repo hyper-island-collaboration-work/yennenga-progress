@@ -86,33 +86,35 @@ const Header = () => {
             </a>
           </div>
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="flex flex-col items-end">
               <button onClick={toggleLanguage}>
                 {i18n.language === "en" ? "SE" : "EN"}
               </button>
-              {navlinks.map((navLinkItem, index) => (
-                <NavLink
-                  to={navLinkItem.link}
-                  className={` group relative h-5 cursor-pointer overflow-hidden ${
-                    navLinkItem.title === "INDIVIDUAL"
-                      ? "text-orange-700"
-                      : textColor
-                  }`}
-                  key={index}
-                >
-                  <div
-                    aria-hidden="true"
-                    className="transition duration-300 group-hover:-translate-y-5 "
+              <div className="ml-10 flex items-baseline space-x-4">
+                {navlinks.map((navLinkItem, index) => (
+                  <NavLink
+                    to={navLinkItem.link}
+                    className={` group relative h-5 cursor-pointer overflow-hidden ${
+                      navLinkItem.title === "INDIVIDUAL"
+                        ? "text-orange-700"
+                        : textColor
+                    }`}
+                    key={index}
                   >
-                    <div className="flex h-5 items-center justify-center">
-                      <span className=""> {navLinkItem.title}</span>
+                    <div
+                      aria-hidden="true"
+                      className="transition duration-300 group-hover:-translate-y-5 "
+                    >
+                      <div className="flex h-5 items-center justify-center">
+                        <span className=""> {navLinkItem.title}</span>
+                      </div>
+                      <div className="flex h-5 items-center justify-center">
+                        <span className=""> {navLinkItem.title}</span>
+                      </div>
                     </div>
-                    <div className="flex h-5 items-center justify-center">
-                      <span className=""> {navLinkItem.title}</span>
-                    </div>
-                  </div>
-                </NavLink>
-              ))}
+                  </NavLink>
+                ))}
+              </div>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
