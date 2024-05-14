@@ -4,7 +4,7 @@ const DanielFakeComponent = () => {
   const [hook, sethook] = useState(false);
 
   const handleClick = () => {
-    setopen((prev) => !prev);
+    setHook((prev) => !prev);
   };
 
   const coloring = "blue";
