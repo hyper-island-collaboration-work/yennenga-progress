@@ -18,13 +18,13 @@ export default function ProjectsPage() {
             const title = fields.title;
             const type = fields.type;
             const description = fields.description;
-            const filteredProjectData = {
+            const  FilteredProject = {
               id,
               title,
               type,
               description,
             };
-            return filteredProjectData;
+            return  FilteredProject;
           });
           setProjectList(cleanProjectsData);
         } else {
