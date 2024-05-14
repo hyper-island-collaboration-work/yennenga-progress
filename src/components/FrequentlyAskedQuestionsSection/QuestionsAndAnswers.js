@@ -1,4 +1,4 @@
-const FAQs = [
+const QuestionAnswerList = [
   {
     id: 1,
     question:
@@ -43,4 +43,4 @@ const FAQs = [
   },
 ];
 
-export default FAQs;
+export default QuestionAnswerList;
