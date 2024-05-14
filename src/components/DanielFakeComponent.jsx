@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const DanielFakeComponent = () => {
-  const [hook, sethook] = useState(false);
+  const [hook, setHook] = useState(false);
 
   const handleClick = () => {
     setHook((prev) => !prev);
